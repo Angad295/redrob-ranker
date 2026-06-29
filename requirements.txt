@@ -1,0 +1,5 @@
+# Redrob Hackathon — rank.py requirements
+# Standard library only — no external packages required.
+# Python >= 3.10 (for tuple type hints with built-in types)
+# Runtime: ~36s for 100,000 candidates on a single CPU core, 465 MB JSONL file.
+# Memory: ~200 MB peak (streaming, no full load).
