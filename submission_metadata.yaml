@@ -1,0 +1,56 @@
+# Redrob Hackathon — Submission Metadata
+
+team_name: "Solo-Leveling"
+
+primary_contact:
+  name: "Angad Pal Singh"
+  email: "angadisher1@gmail.com"
+  phone: "+91-6006720232"
+
+team_members:
+  - name: "Angad Pal Singh"
+    email: "angadisher1@gmail.com"
+    role: "Solo Participant"
+
+github_repo: "https://github.com/Angad295/redrob-ranker"
+
+sandbox_link: "https://angad295-redrob-ranker-app-XXXX.streamlit.app"
+
+reproduce_command: "python rank.py --candidates ./candidates.jsonl --out ./submission.csv"
+
+compute:
+  platform: "Local Laptop"
+  cpu_cores: 8
+  ram_gb: 16
+  python_version: "3.11"
+  os: "Windows 11"
+  uses_gpu_for_inference: false
+  has_network_during_ranking: false
+  pre_computation_required: false
+  pre_computation_time_minutes: 0
+
+ai_tools_used:
+  - "Claude"
+
+ai_usage_summary: |
+  Used Claude for architectural guidance and code review.
+  No candidate data was fed to any LLM during ranking.
+  The ranker itself makes zero API calls and runs fully offline.
+
+methodology_summary: |
+  Feature-based ranker with 6 JD-derived scoring components: title match (28%),
+  career history (27%), skills coverage with trust multiplier (20%), experience
+  (10%), location (8%), and behavioral signals (7%). Skills only score at full
+  weight if endorsements > 3 OR duration_months > 6, catching keyword stuffers.
+  Career descriptions are scanned for 30+ production-ML phrase patterns. Entire
+  consulting-only careers get a 0.20x penalty. Behavioral signals act as a
+  multiplicative availability gate (inactive 180d + low response = 0.20x).
+  Honeypot detection via 4 rules. Runtime: 36 seconds for 100K candidates,
+  CPU only, zero external dependencies.
+
+declarations:
+  read_submission_spec: true
+  code_is_original_work: true
+  no_collusion: true
+  honeypot_check_done: true
+  reproduction_tested: true
