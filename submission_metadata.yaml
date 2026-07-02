@@ -14,7 +14,7 @@ team_members:
 
 github_repo: "https://github.com/Angad295/redrob-ranker"
 
-sandbox_link: "https://angad295-redrob-ranker-app-XXXX.streamlit.app"
+sandbox_link: "https://redrob-ranker-3smld6yfjnm65n4nevhnjl.streamlit.app"
 
 reproduce_command: "python rank.py --candidates ./candidates.jsonl --out ./submission.csv"
 
